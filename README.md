@@ -56,3 +56,12 @@ Setting up the environment
 5. To run unit tests for your service use `poetry run pytest` or simply `pytest` within `poetry shell`.
 
 <p><small>Project partially based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+
+Handling big files
+------------
+
+1. Install Git-LFS: https://git-lfs.github.com/
+2. To track big files run e.g. `git lfs track data/raw/second/sessions.jsonl`
+3. To show tracked files: `git lfs track`
+4. To download/update run `git lfs pull`
