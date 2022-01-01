@@ -1,4 +1,4 @@
-from project_name.data.make_dataset import dummy_sum
+from sales_forecasting.data.make_dataset import dummy_sum
 
 
 def test_dummy_sum():
