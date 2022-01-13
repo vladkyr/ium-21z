@@ -1,66 +1,82 @@
 {
     "meta_data": {
-        "file_created_at": "14.01.2022, 00:01:17"
+        "file_created_at": "14.01.2022, 00:37:08"
     },
     "logs": [
         {
+            "model_type": "base_model",
             "request": {
                 "product_id": "1002"
             },
             "response": 2,
-            "timestamp": "14.01.2022, 00:01:17"
+            "timestamp": "14.01.2022, 00:37:08"
         },
         {
-            "request": {
-                "product_id": "1003"
-            },
-            "response": 2,
-            "timestamp": "14.01.2022, 00:02:02"
-        },
-        {
+            "model_type": "base_model",
             "request": {
                 "product_id": "1002"
             },
             "response": 2,
-            "timestamp": "14.01.2022, 00:02:04"
+            "timestamp": "14.01.2022, 00:37:21"
         },
         {
+            "model_type": "base_model",
             "request": {
                 "product_id": "1006"
             },
             "response": 1,
-            "timestamp": "14.01.2022, 00:02:04"
+            "timestamp": "14.01.2022, 00:37:21"
         },
         {
+            "model_type": "base_model",
             "request": {
                 "product_id": "1045"
             },
             "response": 3,
-            "timestamp": "14.01.2022, 00:02:09"
+            "timestamp": "14.01.2022, 00:37:24"
         },
         {
+            "model_type": "base_model",
+            "request": {
+                "product_id": "1034"
+            },
+            "response": 2,
+            "timestamp": "14.01.2022, 00:37:27"
+        },
+        {
+            "model_type": "base_model",
+            "request": {
+                "product_id": "1314"
+            },
+            "response": 0,
+            "timestamp": "14.01.2022, 00:37:31"
+        },
+        {
+            "model_type": "advanced_model",
             "request": {
                 "date": "2021-10-21",
                 "product_id": "1002"
             },
             "response": 17,
-            "timestamp": "14.01.2022, 00:02:54"
+            "timestamp": "14.01.2022, 00:37:43"
         },
         {
+            "model_type": "advanced_model",
+            "request": {
+                "date": "2021-10-21",
+                "product_id": "1006"
+            },
+            "response": 3,
+            "timestamp": "14.01.2022, 00:37:53"
+        },
+        {
+            "model_type": "advanced_model",
             "request": {
                 "date": "2021-10-21",
                 "product_id": "1045"
             },
             "response": 3,
-            "timestamp": "14.01.2022, 00:03:01"
-        },
-        {
-            "request": {
-                "date": "2021-10-21",
-                "product_id": "1036"
-            },
-            "response": 0,
-            "timestamp": "14.01.2022, 00:03:09"
+            "timestamp": "14.01.2022, 00:37:59"
         }
     ]
 }

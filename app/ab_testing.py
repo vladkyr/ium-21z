@@ -7,12 +7,13 @@ file_path = './logs/ab_testing_logs.json'
 datetime_format = "%d.%m.%Y, %H:%M:%S"
 
 
-def write_logs_to_file(request, response):
+def write_logs_to_file(model_type, request, response):
     if not os.path.isfile(file_path):
         create_file()
     with open(file_path, 'r+') as file:
         file_data = json.load(file)
         data_entry = {
+            'model_type': model_type,
             'request': request,
             'response': response,
             'timestamp': datetime.datetime.now().strftime(datetime_format)
