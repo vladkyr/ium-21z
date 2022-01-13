@@ -1,5 +1,7 @@
 import pickle
 import pandas as pd
+from sales_forecasting.models.base_model import BaseModel
+
 
 def create_features(df):
     df['quarter'] = df['date'].dt.quarter
@@ -47,5 +49,5 @@ def predict_advanced(df):
 
 
 def predict_basic(product_id):
-    basic = pickle.load(open(f"../models/basic_model.pkl", "rb"))
-    return basic.predict(product_id)
+    basic = pickle.load(open(f"../models/base_model.pkl", "rb"))
+    return int(basic.predict(product_id))

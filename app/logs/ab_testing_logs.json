@@ -1,0 +1,66 @@
+{
+    "meta_data": {
+        "file_created_at": "14.01.2022, 00:01:17"
+    },
+    "logs": [
+        {
+            "request": {
+                "product_id": "1002"
+            },
+            "response": 2,
+            "timestamp": "14.01.2022, 00:01:17"
+        },
+        {
+            "request": {
+                "product_id": "1003"
+            },
+            "response": 2,
+            "timestamp": "14.01.2022, 00:02:02"
+        },
+        {
+            "request": {
+                "product_id": "1002"
+            },
+            "response": 2,
+            "timestamp": "14.01.2022, 00:02:04"
+        },
+        {
+            "request": {
+                "product_id": "1006"
+            },
+            "response": 1,
+            "timestamp": "14.01.2022, 00:02:04"
+        },
+        {
+            "request": {
+                "product_id": "1045"
+            },
+            "response": 3,
+            "timestamp": "14.01.2022, 00:02:09"
+        },
+        {
+            "request": {
+                "date": "2021-10-21",
+                "product_id": "1002"
+            },
+            "response": 17,
+            "timestamp": "14.01.2022, 00:02:54"
+        },
+        {
+            "request": {
+                "date": "2021-10-21",
+                "product_id": "1045"
+            },
+            "response": 3,
+            "timestamp": "14.01.2022, 00:03:01"
+        },
+        {
+            "request": {
+                "date": "2021-10-21",
+                "product_id": "1036"
+            },
+            "response": 0,
+            "timestamp": "14.01.2022, 00:03:09"
+        }
+    ]
+}

@@ -1,14 +1,12 @@
 from flask import Flask, jsonify, request
 import pandas as pd
+from ab_testing import write_logs_to_file
 
-from app.model_usage_functions import prepare_data_for_advanced_model, predict_advanced
+from app.model_usage_functions import prepare_data_for_advanced_model, predict_advanced, predict_basic
 
 pd.options.mode.chained_assignment = None  # default='warn'
 
 app = Flask(__name__)
-
-
-
 
 
 @app.route('/predict/advanced_model', methods=['GET'])
@@ -17,23 +15,30 @@ def predict_advanced_model():
     product_id = request.args.get('product_id', type=str)
     df = prepare_data_for_advanced_model(date, product_id)
     prediction = predict_advanced(df)
-    return jsonify(prediction)
+    response = jsonify(prediction)
+    write_logs_to_file(request.args, response.json)
+    return response
 
 
-# return jsonify(date, product_id)
-
-
-@app.route('/predict/basic_model', methods=['GET'])
+@app.route('/predict/base_model', methods=['GET'])
 def predict_basic_model():
     product_id = request.args.get('product_id', type=str)
-    prediction = predict_basic(product_id)
-    return jsonify(prediction)
+    if product_id is None:
+        return 'Please provide product_id.'
+    else:
+        prediction = predict_basic(product_id)
+        response = jsonify(prediction)
+        write_logs_to_file(request.args, response.json)
+        return response
 
 
 @app.route('/')
 def index():
-    return 'Please go to either /predict/advanced_model or /predict/basic_model to get predictions \n' \
-           'Keep in mind that you have to supply date (in YYYY-MM-DD format) and product_id (date not required for basic model'
+    return """<xmp>
+           Please go to either /predict/advanced_model or /predict/basic_model to get predictions.
+           
+           Keep in mind that you have to supply date (in YYYY-MM-DD format) and product_id (date is not required for basic model). 
+           </xmp>"""
 
 
 if __name__ == '__main__':
