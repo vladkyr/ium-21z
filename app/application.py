@@ -25,13 +25,15 @@ def predict_advanced_model():
 
 @app.route('/predict/basic_model', methods=['GET'])
 def predict_basic_model():
-    return "Will finish that later"
+    product_id = request.args.get('product_id', type=str)
+    prediction = predict_basic(product_id)
+    return jsonify(prediction)
 
 
 @app.route('/')
 def index():
     return 'Please go to either /predict/advanced_model or /predict/basic_model to get predictions \n' \
-           'Keep in mind that you have to supply date (in YYYY-MM-DD format) and product_id'
+           'Keep in mind that you have to supply date (in YYYY-MM-DD format) and product_id (date not required for basic model'
 
 
 if __name__ == '__main__':

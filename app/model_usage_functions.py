@@ -44,3 +44,8 @@ def predict_advanced(df):
         prediction = 0
 
     return prediction
+
+
+def predict_basic(product_id):
+    basic = pickle.load(open(f"../models/basic_model.pkl", "rb"))
+    return basic.predict(product_id)
