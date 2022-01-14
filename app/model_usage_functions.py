@@ -1,6 +1,7 @@
 import pickle
 import pandas as pd
 from sales_forecasting.models.base_model import BaseModel
+from sales_forecasting.models.custom_xgboost import CustomXGBRegressor
 
 
 def create_features(df):
@@ -31,13 +32,20 @@ def prepare_data_for_advanced_model(date, product_id):
     df['date'] = [date]
     df['date'] = pd.to_datetime(df['date'])
     df = create_features(df)
-    del df['product_id']
     del df['category_path']
     return df
 
 
 def predict_advanced(df):
-    reg = pickle.load(open(f"../models/xgboost_reg.pkl", "rb"))
+    reg = pickle.load(open(f"../models/xgboost_reg_with_averages.pkl", "rb"))
+    prod_id = df.iloc[0]['product_id']
+    month = df.iloc[0]['month']
+    weekofyear = df.iloc[0]['weekofyear']
+    df['monthly_avg'] = reg.monthly_avg[(reg.monthly_avg['product_id'] == prod_id) &
+                                        (reg.monthly_avg['month'] == month)].iloc[0]['amount']
+    df['weekly_avg'] = reg.weekly_avg[(reg.weekly_avg['product_id'] == prod_id) &
+                                      (reg.weekly_avg['weekofyear'] == weekofyear)].iloc[0]['amount']
+    del df['product_id']
     prediction = reg.predict(df)
     prediction = prediction[0]
 

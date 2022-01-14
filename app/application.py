@@ -35,9 +35,9 @@ def predict_basic_model():
 @app.route('/')
 def index():
     return """<xmp>
-           Please go to either /predict/advanced_model or /predict/basic_model to get predictions.
+           Please go to either /predict/advanced_model or /predict/base_model to get predictions.
            
-           Keep in mind that you have to supply date (in YYYY-MM-DD format) and product_id (date is not required for basic model). 
+           Keep in mind that you have to supply date (in YYYY-MM-DD format) and product_id (date is not required for base model). 
            </xmp>"""
 
 

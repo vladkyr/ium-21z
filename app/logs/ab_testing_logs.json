@@ -77,6 +77,57 @@
             },
             "response": 3,
             "timestamp": "14.01.2022, 00:37:59"
+        },
+        {
+            "model_type": "base_model",
+            "request": {
+                "product_id": "1002"
+            },
+            "response": 2,
+            "timestamp": "14.01.2022, 20:13:58"
+        },
+        {
+            "model_type": "base_model",
+            "request": {
+                "product_id": "1003"
+            },
+            "response": 2,
+            "timestamp": "14.01.2022, 20:14:03"
+        },
+        {
+            "model_type": "base_model",
+            "request": {
+                "product_id": "1006"
+            },
+            "response": 1,
+            "timestamp": "14.01.2022, 20:14:06"
+        },
+        {
+            "model_type": "advanced_model",
+            "request": {
+                "date": "2021-10-21",
+                "product_id": "1002"
+            },
+            "response": 26,
+            "timestamp": "14.01.2022, 20:37:52"
+        },
+        {
+            "model_type": "advanced_model",
+            "request": {
+                "date": "2021-10-21",
+                "product_id": "1004"
+            },
+            "response": 0,
+            "timestamp": "14.01.2022, 20:38:38"
+        },
+        {
+            "model_type": "advanced_model",
+            "request": {
+                "date": "2021-10-21",
+                "product_id": "1005"
+            },
+            "response": 3,
+            "timestamp": "14.01.2022, 20:38:41"
         }
     ]
 }
